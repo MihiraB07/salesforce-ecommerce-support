@@ -1,0 +1,14 @@
+# Dependencies & Environment
+.env
+*.secret
+*.key
+
+# Salesforce Local / IDE
+.sfdx/
+.sf/
+.vscode/
+
+# OS Metadata
+Thumbs.db
+Desktop.ini
+.DS_Store

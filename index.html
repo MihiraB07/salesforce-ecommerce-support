@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Support - Submit Complaint</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      padding: 40px;
+      width: 100%;
+      max-width: 580px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .header .logo {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .header h1 {
+      color: #1a73e8;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .header p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .divider {
+      height: 3px;
+      background: linear-gradient(90deg, #1a73e8, #42a5f5);
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #1a73e8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      margin-top: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 6px;
+    }
+
+    label .required {
+      color: #e53935;
+      margin-left: 3px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 11px 14px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #333;
+      background: #fafafa;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      outline: none;
+      font-family: inherit;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #1a73e8;
+      box-shadow: 0 0 0 3px rgba(26,115,232,0.15);
+      background: #fff;
+    }
+
+    textarea {
+      height: 110px;
+      resize: vertical;
+    }
+
+    select {
+      cursor: pointer;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: #888;
+      margin-top: 4px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #1a73e8, #0d47a1);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: opacity 0.3s, transform 0.1s;
+      letter-spacing: 0.5px;
+    }
+
+    .submit-btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 12px;
+      color: #999;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e8f0fe;
+      color: #1a73e8;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+
+    .row {
+      display: flex;
+      gap: 14px;
+    }
+
+    .row .form-group {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">🛒</div>
+    <span class="badge">E-Commerce Support Portal</span>
+    <h1>Submit a Complaint</h1>
+    <p>We are here to help. Please fill in the details below and our support team will respond shortly.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Form -->
+  <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DgK00000c6mC9" method="POST">
+
+    <input type="hidden" name="orgid" value="00DgK00000c6mC9">
+    <input type="hidden" name="retURL" value="https://www.google.com">
+
+    <!-- Personal Information -->
+    <div class="section-title">👤 Personal Information</div>
+
+    <div class="form-group">
+      <label for="name">Full Name <span class="required">*</span></label>
+      <input id="name" maxlength="80" name="name" type="text" placeholder="Enter your full name" required />
+    </div>
+
+    <div class="row">
+      <div class="form-group">
+        <label for="email">Email Address <span class="required">*</span></label>
+        <input id="email" maxlength="80" name="email" type="email" placeholder="you@email.com" required />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input id="phone" maxlength="40" name="phone" type="text" placeholder="10-digit number" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="00NgK00004y4Zqb">Customer Mobile <span class="required">*</span></label>
+      <input id="00NgK00004y4Zqb" maxlength="40" name="00NgK00004y4Zqb" type="text" placeholder="e.g. 9876543210" required />
+      <div class="hint">📱 Real-time SMS status alerts will be dispatched to this number</div>
+    </div>
+
+    <!-- Order & Complaint Details -->
+    <div class="section-title">📦 Order & Complaint Details</div>
+
+    <div class="row">
+      <div class="form-group">
+        <label for="00NgK00004y4XiL">Order ID <span class="required">*</span></label>
+        <input id="00NgK00004y4XiL" maxlength="50" name="00NgK00004y4XiL" type="text" placeholder="e.g. ORD-12345" required />
+      </div>
+      <div class="form-group">
+        <label for="00NgK00004y4ZXF">Complaint Category <span class="required">*</span></label>
+        <select id="00NgK00004y4ZXF" name="00NgK00004y4ZXF" required>
+          <option value="">-- Select Category --</option>
+          <option value="Delivery Issue">🚚 Delivery Issue</option>
+          <option value="Damaged Product">📦 Damaged Product</option>
+          <option value="Payment Failure">💳 Payment Failure</option>
+          <option value="Missing Order">❓ Missing Order</option>
+          <option value="Return Request">🔄 Return Request</option>
+          <option value="Refund Request">💰 Refund Request</option>
+          <option value="Other">📝 Other</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Complaint Subject <span class="required">*</span></label>
+      <input id="subject" maxlength="80" name="subject" type="text" placeholder="Brief summary of your complaint" required />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Detailed Description <span class="required">*</span></label>
+      <textarea id="description" name="description" placeholder="Please describe your complaint in detail. Include any relevant information such as delivery date, package condition, or payment transaction ID." required></textarea>
+    </div>
+
+    <!-- Submit -->
+    <input class="submit-btn" type="submit" value="🚀 Submit Complaint" />
+
+  </form>
+
+  <div class="footer-note">
+    🔒 End-to-end encrypted CRM intake. Powered by Salesforce Service Cloud.<br>
+    Automated status notifications enabled.
+  </div>
+
+</div>
+
+</body>
+</html>
